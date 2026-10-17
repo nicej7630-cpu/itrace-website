@@ -1,79 +1,133 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Frequently asked questions about Itrace and its website.">
   <title>Frequently Asked Questions | Itrace</title>
+
   <style>
     * { box-sizing: border-box; }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f8fc;
-      color: #17243a;
+      background: #f4f7fb;
+      color: #243247;
       line-height: 1.7;
     }
-    header, footer { background: #10294b; color: white; padding: 20px; }
+
+    header {
+      background: #102b4e;
+      color: white;
+      padding: 18px 5%;
+    }
+
     nav {
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
       flex-wrap: wrap;
+      gap: 14px;
     }
-    .logo { font-size: 26px; font-weight: bold; }
-    nav a { color: white; text-decoration: none; margin: 5px; }
-    .hero {
-      background: linear-gradient(135deg, #10294b, #176d91);
+
+    .logo {
       color: white;
-      padding: 45px 20px;
-      text-align: center;
-    }
-    main { max-width: 850px; margin: auto; padding: 30px 20px; }
-    .faq {
-      background: white;
-      padding: 18px 20px;
-      margin-bottom: 14px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px #10294b0d;
-    }
-    summary {
-      cursor: pointer;
+      font-size: 25px;
       font-weight: bold;
-      color: #176d91;
+      text-decoration: none;
     }
-    .contact {
-      background: #e8f1f8;
-      border-radius: 12px;
-      padding: 20px;
-      margin-top: 25px;
-      text-align: center;
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
     }
-    .btn {
-      display: inline-block;
-      background: #10294b;
+
+    .nav-links a {
       color: white;
       text-decoration: none;
-      padding: 12px 20px;
-      border-radius: 8px;
-      margin-top: 10px;
+      font-size: 14px;
     }
-    footer { text-align: center; margin-top: 30px; }
-    footer a { color: white; }
+
+    .nav-links a:hover { text-decoration: underline; }
+
+    .hero {
+      background: linear-gradient(135deg, #102b4e, #176b87);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 42px);
+      margin: 0 0 10px;
+    }
+
+    main {
+      max-width: 900px;
+      margin: auto;
+      padding: 35px 20px;
+    }
+
+    .faq-item {
+      background: white;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      box-shadow: 0 4px 16px rgba(16, 43, 78, 0.06);
+      overflow: hidden;
+    }
+
+    .faq-item summary {
+      padding: 20px;
+      cursor: pointer;
+      font-weight: bold;
+      color: #176b87;
+    }
+
+    .answer { padding: 0 20px 20px; }
+
+    .notice {
+      background: #e8f2f8;
+      padding: 18px;
+      border-radius: 10px;
+      margin-top: 25px;
+    }
+
+    footer {
+      background: #102b4e;
+      color: white;
+      text-align: center;
+      padding: 22px;
+      margin-top: 25px;
+    }
+
+    footer a { color: #f2c66d; }
+
+    @media (max-width: 600px) {
+      header { padding: 16px; }
+      nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+      .nav-links { gap: 12px; }
+    }
   </style>
 </head>
+
 <body>
   <header>
     <nav>
-      <div class="logo">Itrace</div>
-      <div>
+      <a class="logo" href="index.html">Itrace</a>
+      <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="services.html">Services</a>
         <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
         <a href="contact.html">Contact</a>
+        <a href="login.html">Client Login</a>
       </div>
     </nav>
   </header>
@@ -84,61 +138,64 @@
   </section>
 
   <main>
-    <details class="faq">
+    <details class="faq-item">
       <summary>What is Itrace?</summary>
-      <p>Itrace is developing an online platform for financial information,
-      educational resources, and customer support.</p>
+      <div class="answer">
+        <p>Itrace is a financial-services information website that provides general information and client support resources.</p>
+      </div>
     </details>
 
-    <details class="faq">
-      <summary>Is Itrace a bank?</summary>
-      <p>No. This website presents Itrace as an independent
-      financial-information platform, not a bank.</p>
-    </details>
-
-    <details class="faq">
+    <details class="faq-item">
       <summary>What services are available?</summary>
-      <p>Please review our Services page for the information and
-      support currently described on this website.</p>
+      <div class="answer">
+        <p>You can explore the information resources described on our Services page and contact us with general questions.</p>
+        <p><a href="services.html">View our services</a></p>
+      </div>
     </details>
 
-    <details class="faq">
-      <summary>Can I create a client account?</summary>
-      <p>The client-account system is still being developed.
-      We will publish account-registration information when it is ready.</p>
-    </details>
-
-    <details class="faq">
+    <details class="faq-item">
       <summary>How can I contact Itrace?</summary>
-      <p>Visit our Contact page to find the available contact options
-      and prepare an enquiry by email.</p>
+      <div class="answer">
+        <p>Email us at <a href="mailto:bankitrace@gmail.com">bankitrace@gmail.com</a> or visit our Contact page.</p>
+        <p><a href="contact.html">Contact us</a></p>
+      </div>
     </details>
 
-    <details class="faq">
-      <summary>Is my personal information safe?</summary>
-      <p>Do not submit passwords, card PINs, or sensitive financial
-      information through this demonstration website. Proper account
-      security and privacy controls must be implemented before
-      collecting sensitive client information.</p>
+    <details class="faq-item">
+      <summary>Does Itrace have a client login?</summary>
+      <div class="answer">
+        <p>A client login page is planned. Account access should only be enabled after authentication, database permissions, and account recovery have been configured and tested.</p>
+      </div>
     </details>
 
-    <details class="faq">
-      <summary>Does Itrace provide financial advice?</summary>
-      <p>This website provides general informational content.
-      It does not replace personalized professional advice.</p>
+    <details class="faq-item">
+      <summary>Is Itrace a bank?</summary>
+      <div class="answer">
+        <p>This website does not claim to be a licensed bank or financial institution. Always verify a financial provider's authorization before using its services.</p>
+      </div>
     </details>
 
-    <div class="contact">
-      <h2>Still have questions?</h2>
-      <p>Visit our Contact page to get in touch.</p>
-      <a class="btn" href="contact.html">Contact Us</a>
+    <details class="faq-item">
+      <summary>How can I protect my information?</summary>
+      <div class="answer">
+        <p>Never share your bank password, card PIN, one-time verification code, or other confidential banking credentials through ordinary website forms or email.</p>
+      </div>
+    </details>
+
+    <div class="notice">
+      <strong>Need more help?</strong>
+      Send your general enquiry to
+      <a href="mailto:bankitrace@gmail.com">bankitrace@gmail.com</a>.
     </div>
   </main>
 
   <footer>
     <p>&copy; 2026 Itrace. All rights reserved.</p>
-    <p>Financial information and customer support.</p>
-    <a href="index.html">Return Home</a>
+    <p>
+      <a href="index.html">Home</a> |
+      <a href="services.html">Services</a> |
+      <a href="contact.html">Contact</a>
+    </p>
   </footer>
 </body>
 </html>
