@@ -1,152 +1,163 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Itrace financial services information and client support.">
-  <title>Itrace | Financial Services</title>
+  <title>Itrace | Financial Services Information</title>
+  <meta name="description" content="Welcome to Itrace. Explore financial information, services, and client support.">
   <style>
     * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      color: #17243a;
-      background: #f5f8fc;
+      background: #f4f7fb;
+      color: #243247;
       line-height: 1.6;
     }
     header {
-      background: #10294b;
+      background: #102b4e;
       color: white;
-      padding: 20px;
+      padding: 18px 5%;
     }
     nav {
-      max-width: 1050px;
+      max-width: 1100px;
       margin: auto;
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
       flex-wrap: wrap;
+      gap: 14px;
     }
-    .logo { font-size: 26px; font-weight: bold; }
-    nav a { color: white; text-decoration: none; margin: 0 7px; }
-    .hero {
-      padding: 75px 22px;
-      text-align: center;
+    .logo {
       color: white;
-      background: linear-gradient(135deg, #10294b, #176d91);
-    }
-    .hero h1 { font-size: clamp(32px, 7vw, 52px); line-height: 1.15; }
-    .hero p { max-width: 600px; margin: 20px auto; }
-    .btn {
-      display: inline-block;
-      padding: 12px 22px;
-      background: #f0c66b;
-      color: #10294b;
-      border-radius: 8px;
+      font-size: 25px;
       font-weight: bold;
       text-decoration: none;
-      margin: 6px;
     }
-    main { max-width: 1050px; margin: auto; padding: 35px 20px; }
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      font-size: 14px;
+    }
+    .nav-links a:hover { text-decoration: underline; }
+    .hero {
+      background: linear-gradient(135deg, #102b4e, #176b87);
+      color: white;
+      padding: 75px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: clamp(30px, 5vw, 46px);
+      margin: 0 0 15px;
+    }
+    .hero p {
+      max-width: 650px;
+      margin: 0 auto 25px;
+    }
+    .button {
+      display: inline-block;
+      background: #f2c66d;
+      color: #102b4e;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      margin: 5px;
+    }
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 35px 20px;
+    }
     .cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
+      gap: 20px;
     }
     .card {
       background: white;
       padding: 24px;
       border-radius: 14px;
-      box-shadow: 0 4px 18px #122b4910;
+      box-shadow: 0 5px 20px rgba(16, 43, 78, 0.07);
     }
-    .card h3 { color: #176d91; }
+    .card h3 { color: #176b87; }
     .notice {
-      background: #e8f1f8;
+      background: #e8f2f8;
       padding: 18px;
       border-radius: 10px;
       margin-top: 25px;
     }
     footer {
-      text-align: center;
-      background: #10294b;
+      background: #102b4e;
       color: white;
-      padding: 25px;
+      text-align: center;
+      padding: 22px;
+      margin-top: 25px;
     }
-    footer a { color: white; }
+    footer a { color: #f2c66d; }
+    @media (max-width: 600px) {
+      header { padding: 16px; }
+      nav { align-items: flex-start; flex-direction: column; }
+      .nav-links { gap: 12px; }
+      .hero { padding: 55px 18px; }
+    }
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Itrace</div>
-      <div>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
+      <a class="logo" href="index.html">Itrace</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="login.html">Client Login</a>
       </div>
     </nav>
   </header>
 
-  <section class="hero" id="home">
-    <h1>Financial Information.<br>Clearer Decisions.</h1>
-    <p>
-      Welcome to Itrace. Explore our information services,
-      learn about our support options, and contact our team
-      for assistance.
-    </p>
-    <a class="btn" href="#services">Explore Services</a>
-    <a class="btn" href="#contact">Contact Us</a>
+  <section class="hero">
+    <h1>Welcome to Itrace</h1>
+    <p>Clear financial information, helpful resources, and responsive client support — all in one place.</p>
+    <a class="button" href="services.html">Explore Services</a>
+    <a class="button" href="contact.html">Contact Us</a>
   </section>
 
   <main>
-    <section id="services">
-      <h2>Our Services</h2>
-      <p>Discover the information and support available through Itrace.</p>
-      <div class="cards">
-        <article class="card">
-          <h3>Financial Information</h3>
-          <p>Access clear information to help you understand financial services.</p>
-        </article>
-        <article class="card">
-          <h3>Client Support</h3>
-          <p>Contact our team with questions about our services and procedures.</p>
-        </article>
-        <article class="card">
-          <h3>Account Assistance</h3>
-          <p>Learn how client account access and support will work on our platform.</p>
-        </article>
-      </div>
-    </section>
+    <h2>How Itrace Can Help</h2>
+    <div class="cards">
+      <section class="card">
+        <h3>Financial Information</h3>
+        <p>Explore general financial information and resources to help you make informed decisions.</p>
+      </section>
+      <section class="card">
+        <h3>Client Support</h3>
+        <p>Find answers to common questions and learn how to contact our team.</p>
+      </section>
+      <section class="card">
+        <h3>Service Guidance</h3>
+        <p>Review our published information and learn what support may be available.</p>
+      </section>
+    </div>
 
-    <section id="about">
-      <h2>About Itrace</h2>
-      <p>
-        Itrace is developing an accessible online platform for
-        financial-services information and client support.
-        Details about our services will be published transparently.
-      </p>
-      <div class="notice">
-        Itrace is an independent information platform. This website
-        does not claim to be a bank or a licensed financial institution.
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Us</h2>
-      <div class="card">
-        <p>Email our team with general enquiries:</p>
-        <p><strong>Business email:</strong> Add your Gmail address here.</p>
-        <a class="btn" href="mailto:">Email Itrace</a>
-      </div>
-    </section>
+    <div class="notice">
+      <strong>Important information:</strong>
+      Itrace is a financial-services information website. Do not submit bank passwords,
+      card PINs, verification codes, or other confidential banking credentials through this site.
+      Check the provider and its regulatory status before using any financial product.
+    </div>
   </main>
 
   <footer>
     <p>&copy; 2026 Itrace. All rights reserved.</p>
-    <p>Financial information and client support.</p>
+    <p><a href="contact.html">Contact</a> | <a href="faq.html">FAQs</a></p>
   </footer>
 </body>
 </html>
