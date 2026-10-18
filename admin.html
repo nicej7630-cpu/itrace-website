@@ -1,0 +1,300 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#092b52">
+<title>Administration | Itrace Bank Financial</title>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Arial,sans-serif;background:#f3f6fb;color:#24364b}
+header{background:#092b52;color:white;padding:18px 22px}
+.nav{max-width:1200px;margin:auto;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.brand{font-weight:bold;font-size:18px}
+a{color:#1255a0;text-decoration:none}
+header a{color:white}
+.container{max-width:1200px;margin:28px auto;padding:0 18px}
+.notice{background:#fff3d8;border:1px solid #eed49a;color:#684b0b;padding:13px 15px;border-radius:9px;font-size:13px;line-height:1.5;margin-bottom:23px}
+.heading{display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;margin-bottom:22px}
+h1{font-size:27px;color:#092b52}
+.subtitle{font-size:14px;color:#718096;margin-top:6px}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-bottom:22px}
+.card{background:white;border:1px solid #e6edf5;border-radius:12px;padding:21px;box-shadow:0 5px 20px #092b5208}
+.stat-label{font-size:13px;color:#718096}
+.stat-value{font-size:27px;font-weight:bold;color:#092b52;margin-top:9px}
+.toolbar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+input,select{padding:12px;border:1px solid #d5dfeb;border-radius:8px;font-size:14px;background:white;min-width:0}
+#search{flex:1;min-width:180px}
+button,.button{border:0;background:#1255a0;color:white;padding:12px 16px;border-radius:8px;font-weight:bold;cursor:pointer;font-size:13px}
+button:hover,.button:hover{background:#092b52}
+.secondary{background:#e9eff8;color:#092b52}
+.secondary:hover{background:#d9e5f5}
+.table-wrap{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:680px}
+th,td{text-align:left;padding:15px 12px;border-bottom:1px solid #edf1f6;font-size:13px}
+th{color:#718096;font-weight:bold;background:#f9fbfe}
+.status{display:inline-block;padding:5px 9px;border-radius:20px;background:#e8f6ed;color:#176b3b;font-size:11px}
+.action{margin:2px;padding:8px 10px}
+.empty{text-align:center;color:#718096;padding:25px}
+.form-area{display:none;margin-bottom:20px}
+.form-area.open{display:block}
+.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.form-grid label{display:block;font-size:13px;font-weight:bold;margin-bottom:7px}
+.form-grid input,.form-grid select{width:100%}
+.field{margin-bottom:4px}
+.form-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+.message{font-size:13px;margin-top:12px;line-height:1.5}
+footer{text-align:center;padding:26px;color:#718096;font-size:12px}
+@media(max-width:700px){
+.stats{grid-template-columns:1fr}
+.form-grid{grid-template-columns:1fr}
+.heading{align-items:flex-start}
+}
+</style>
+</head>
+
+<body>
+<header>
+  <div class="nav">
+    <div class="brand">ITRACE BANK FINANCIAL | ADMINISTRATION</div>
+    <a href="index.html">← View website</a>
+  </div>
+</header>
+
+<main class="container">
+
+  <div class="notice">
+    <strong>Preview administration workspace.</strong>
+    All customer records and balances on this page are fictional.
+    Changes remain in this browser session and are not saved to a secure
+    database. This page is not protected by administrator authentication.
+  </div>
+
+  <div class="heading">
+    <div>
+      <h1>Customer management</h1>
+      <p class="subtitle">Manage example customer records and illustrative balances.</p>
+    </div>
+    <button onclick="openForm()">+ Add customer</button>
+  </div>
+
+  <section class="stats">
+    <div class="card">
+      <div class="stat-label">Preview customers</div>
+      <div class="stat-value" id="customerCount">3</div>
+    </div>
+    <div class="card">
+      <div class="stat-label">Illustrative combined balances</div>
+      <div class="stat-value" id="totalBalance">$18,350.00</div>
+    </div>
+    <div class="card">
+      <div class="stat-label">Example account records</div>
+      <div class="stat-value" id="recordCount">3</div>
+    </div>
+  </section>
+
+  <section class="card form-area" id="customerForm">
+    <h2 id="formTitle" style="color:#092b52;font-size:20px;margin-bottom:18px">Add preview customer</h2>
+
+    <form id="recordForm">
+      <div class="form-grid">
+        <div class="field">
+          <label for="name">Customer name</label>
+          <input id="name" maxlength="80" placeholder="Example Customer" required>
+        </div>
+        <div class="field">
+          <label for="email">Example email</label>
+          <input id="email" type="email" maxlength="120" placeholder="customer@example.test" required>
+        </div>
+        <div class="field">
+          <label for="balance">Illustrative balance (USD)</label>
+          <input id="balance" type="number" min="0" max="100000000" step="0.01" value="0" required>
+        </div>
+        <div class="field">
+          <label for="status">Preview status</label>
+          <select id="status">
+            <option value="Example">Example account</option>
+            <option value="Pending">Pending review (example)</option>
+            <option value="Inactive">Inactive (example)</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button type="submit">Save preview record</button>
+        <button type="button" class="secondary" onclick="closeForm()">Cancel</button>
+      </div>
+      <p class="message" id="formMessage" role="status"></p>
+    </form>
+  </section>
+
+  <section class="card">
+    <div class="toolbar">
+      <input id="search" type="search" placeholder="Search example customers..." aria-label="Search customers">
+      <button class="secondary" onclick="renderCustomers()">Refresh list</button>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Customer</th>
+            <th>Example email</th>
+            <th>Illustrative balance</th>
+            <th>Record status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="customerRows"></tbody>
+      </table>
+      <div id="emptyMessage" class="empty" hidden>No matching preview records.</div>
+    </div>
+  </section>
+
+  <p class="subtitle" style="margin-top:18px">
+    No real customer accounts, banking balances, payments, or transfers are changed by this page.
+  </p>
+</main>
+
+<footer>
+  Itrace Bank Financial · Administration interface preview
+</footer>
+
+<script>
+const customers = [
+  {id:1,name:"Alex Morgan",email:"alex@example.test",balance:8250,status:"Example"},
+  {id:2,name:"Jordan Taylor",email:"jordan@example.test",balance:6100,status:"Example"},
+  {id:3,name:"Casey Lee",email:"casey@example.test",balance:4000,status:"Pending"}
+];
+
+let editingId = null;
+let nextId = 4;
+
+const money = value => new Intl.NumberFormat("en-US", {
+  style:"currency",currency:"USD"
+}).format(value);
+
+function updateStats(){
+  document.getElementById("customerCount").textContent = customers.length;
+  document.getElementById("recordCount").textContent = customers.length;
+  document.getElementById("totalBalance").textContent =
+    money(customers.reduce((sum,c) => sum + c.balance, 0));
+}
+
+function renderCustomers(){
+  const query = document.getElementById("search").value.trim().toLowerCase();
+  const filtered = customers.filter(c =>
+    c.name.toLowerCase().includes(query) ||
+    c.email.toLowerCase().includes(query)
+  );
+
+  const rows = document.getElementById("customerRows");
+  rows.replaceChildren();
+  document.getElementById("emptyMessage").hidden = filtered.length !== 0;
+
+  filtered.forEach(c => {
+    const row = document.createElement("tr");
+
+    function cell(text){
+      const td = document.createElement("td");
+      td.textContent = text;
+      row.appendChild(td);
+      return td;
+    }
+
+    cell(c.name);
+    cell(c.email);
+    cell(money(c.balance));
+
+    const statusCell = cell("");
+    const badge = document.createElement("span");
+    badge.className = "status";
+    badge.textContent = c.status;
+    statusCell.appendChild(badge);
+
+    const actions = cell("");
+    const edit = document.createElement("button");
+    edit.className = "action";
+    edit.textContent = "Edit";
+    edit.addEventListener("click", () => editCustomer(c.id));
+
+    const remove = document.createElement("button");
+    remove.className = "action secondary";
+    remove.textContent = "Remove";
+    remove.addEventListener("click", () => removeCustomer(c.id));
+
+    actions.append(edit, remove);
+    rows.appendChild(row);
+  });
+
+  updateStats();
+}
+
+function openForm(){
+  editingId = null;
+  document.getElementById("recordForm").reset();
+  document.getElementById("formTitle").textContent = "Add preview customer";
+  document.getElementById("customerForm").classList.add("open");
+  document.getElementById("formMessage").textContent = "";
+  document.getElementById("name").focus();
+}
+
+function closeForm(){
+  document.getElementById("customerForm").classList.remove("open");
+  editingId = null;
+}
+
+function editCustomer(id){
+  const c = customers.find(item => item.id === id);
+  if(!c) return;
+
+  editingId = id;
+  document.getElementById("name").value = c.name;
+  document.getElementById("email").value = c.email;
+  document.getElementById("balance").value = c.balance;
+  document.getElementById("status").value = c.status;
+  document.getElementById("formTitle").textContent = "Edit preview customer";
+  document.getElementById("formMessage").textContent = "";
+  document.getElementById("customerForm").classList.add("open");
+  document.getElementById("name").focus();
+}
+
+function removeCustomer(id){
+  if(!confirm("Remove this fictional preview record?")) return;
+  const index = customers.findIndex(c => c.id === id);
+  if(index !== -1) customers.splice(index,1);
+  renderCustomers();
+}
+
+document.getElementById("recordForm").addEventListener("submit", function(event){
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const balance = Number(document.getElementById("balance").value);
+  const status = document.getElementById("status").value;
+  const message = document.getElementById("formMessage");
+
+  if(!name || !email || !Number.isFinite(balance) || balance < 0){
+    message.textContent = "Please enter valid example customer information.";
+    return;
+  }
+
+  if(editingId !== null){
+    const c = customers.find(item => item.id === editingId);
+    if(c) Object.assign(c,{name,email,balance,status});
+  } else {
+    customers.push({id:nextId++,name,email,balance,status});
+  }
+
+  closeForm();
+  document.getElementById("search").value = "";
+  renderCustomers();
+});
+
+document.getElementById("search").addEventListener("input",renderCustomers);
+renderCustomers();
+</script>
+</body>
+</html>
