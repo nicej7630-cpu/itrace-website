@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#092b52">
+  <title>Customer Portal | Itrace Bank Financial</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f1f5fb;
+      color: #20334b;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #092b52;
+      color: white;
+      padding: 19px 22px;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand { font-size: 19px; font-weight: bold; }
+    header a { color: white; text-decoration: none; }
+
+    .layout {
+      max-width: 1000px;
+      margin: 55px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      align-items: stretch;
+    }
+
+    .welcome {
+      background: linear-gradient(145deg, #092b52, #1763a9);
+      color: white;
+      border-radius: 18px;
+      padding: 40px 30px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 400px;
+    }
+
+    .welcome .mark {
+      color: #e9bd68;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+    }
+
+    h1 { font-size: 32px; line-height: 1.2; margin-bottom: 17px; }
+    .welcome p { color: #e0eaf6; line-height: 1.7; }
+
+    .login-card {
+      background: white;
+      border-radius: 18px;
+      padding: 35px 28px;
+      box-shadow: 0 10px 35px #0b2b4d0c;
+    }
+
+    .login-card h2 { color: #092b52; margin-bottom: 8px; }
+    .sub { color: #718096; font-size: 14px; margin-bottom: 25px; }
+
+    .notice {
+      padding: 12px;
+      border-radius: 8px;
+      background: #fff4d9;
+      color: #6c4d0a;
+      font-size: 12px;
+      margin-bottom: 20px;
+    }
+
+    label { display: block; font-weight: bold; font-size: 13px; margin: 17px 0 7px; }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d6dfeb;
+      border-radius: 8px;
+      font-size: 15px;
+      background: white;
+    }
+
+    input:focus { outline: 2px solid #8bb9ef; border-color: #1763a9; }
+
+    button, .button {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      margin-top: 22px;
+      border: none;
+      border-radius: 8px;
+      background: #1255a0;
+      color: white;
+      font-weight: bold;
+      font-size: 15px;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    button:hover, .button:hover { background: #092b52; }
+
+    .back { text-align: center; margin-top: 22px; font-size: 14px; }
+    .back a { color: #1255a0; text-decoration: none; }
+
+    .message { margin-top: 15px; font-size: 13px; line-height: 1.5; }
+
+    @media (max-width: 700px) {
+      .layout { grid-template-columns: 1fr; margin: 25px auto; }
+      .welcome { min-height: 250px; padding: 28px; }
+      .login-card { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">ITRACE BANK FINANCIAL</a>
+      <a href="index.html">← Back to Home</a>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="welcome">
+      <div class="mark">CUSTOMER PORTAL</div>
+      <h1>Welcome back.</h1>
+      <p>
+        Explore the Itrace Bank Financial customer portal.
+        Your account dashboard and customer tools are being
+        prepared for a secure, connected experience.
+      </p>
+    </section>
+
+    <section class="login-card">
+      <h2>Customer access</h2>
+      <p class="sub">Continue to explore the account dashboard.</p>
+
+      <div class="notice">
+        Preview access only. Do not enter real banking passwords,
+        card numbers, PINs, or financial information.
+      </div>
+
+      <label for="email">Email address (optional)</label>
+      <input id="email" type="email" placeholder="you@example.com"
+             autocomplete="off">
+
+      <button type="button" id="continueBtn">Continue to Portal</button>
+
+      <p id="message" class="message" role="status"></p>
+
+      <div class="back">
+        <a href="index.html">Return to homepage</a>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("continueBtn").addEventListener("click", function () {
+      window.location.href = "dashboard.html";
+    });
+  </script>
+</body>
+</html>
