@@ -1,0 +1,192 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092b52">
+  <title>Sign Up | Itrace Bank Financial</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f1f5fb;
+      color: #20334b;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #092b52;
+      color: white;
+      padding: 20px;
+    }
+
+    .nav {
+      max-width: 1050px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    header a { color: white; text-decoration: none; }
+    .brand { font-weight: bold; font-size: 18px; }
+
+    main {
+      max-width: 520px;
+      margin: 38px auto;
+      padding: 0 18px;
+    }
+
+    .card {
+      background: white;
+      padding: 32px;
+      border-radius: 17px;
+      box-shadow: 0 10px 35px #0b2b4d10;
+    }
+
+    h1 { color: #092b52; font-size: 29px; margin-bottom: 9px; }
+    .intro { color: #718096; font-size: 14px; margin-bottom: 24px; line-height: 1.6; }
+
+    .notice {
+      background: #fff4d9;
+      color: #694b0b;
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 12px;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    label {
+      display: block;
+      font-size: 13px;
+      font-weight: bold;
+      margin: 16px 0 7px;
+    }
+
+    input {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid #d6dfeb;
+      border-radius: 8px;
+      font-size: 15px;
+    }
+
+    input:focus { outline: 2px solid #8bb9ef; }
+
+    .check {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      margin-top: 18px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .check input { width: auto; margin-top: 4px; }
+
+    button {
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      background: #1255a0;
+      color: white;
+      padding: 14px;
+      font-size: 15px;
+      font-weight: bold;
+      margin-top: 22px;
+      cursor: pointer;
+    }
+
+    button:hover { background: #092b52; }
+
+    .message { margin-top: 15px; font-size: 13px; line-height: 1.5; }
+    .signin { text-align: center; margin-top: 22px; font-size: 14px; }
+    .signin a { color: #1255a0; text-decoration: none; font-weight: bold; }
+
+    @media (max-width: 480px) {
+      .card { padding: 24px 20px; }
+      main { margin: 25px auto; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <a class="brand" href="index.html">ITRACE BANK FINANCIAL</a>
+      <a href="index.html">Home</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <h1>Create an account</h1>
+      <p class="intro">
+        Welcome to Itrace Bank Financial. Start by exploring the
+        account registration experience.
+      </p>
+
+      <div class="notice">
+        Registration is not connected to a live bank. Do not submit
+        real financial information or sensitive identity documents.
+      </div>
+
+      <form id="signupForm">
+        <label for="fullName">Full name</label>
+        <input id="fullName" name="fullName" type="text"
+               placeholder="Enter your name" required autocomplete="name">
+
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email"
+               placeholder="you@example.com" required autocomplete="off">
+
+        <label for="password">Create a sample password</label>
+        <input id="password" name="password" type="password"
+               placeholder="Use a fictional password" minlength="8"
+               required autocomplete="new-password">
+
+        <label for="confirmPassword">Confirm sample password</label>
+        <input id="confirmPassword" name="confirmPassword" type="password"
+               placeholder="Enter it again" minlength="8"
+               required autocomplete="new-password">
+
+        <label class="check">
+          <input id="terms" type="checkbox" required>
+          <span>I understand this is a website preview, not an active bank account application.</span>
+        </label>
+
+        <button type="submit">Continue</button>
+        <p class="message" id="message" role="status"></p>
+      </form>
+
+      <p class="signin">
+        Already have an account? <a href="login.html">Log in</a>
+      </p>
+    </section>
+  </main>
+
+  <script>
+    document.getElementById("signupForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const password = document.getElementById("password").value;
+      const confirmPassword = document.getElementById("confirmPassword").value;
+      const message = document.getElementById("message");
+
+      if (password !== confirmPassword) {
+        message.textContent = "The sample passwords do not match. Please try again.";
+        message.style.color = "#b42318";
+        return;
+      }
+
+      message.textContent =
+        "This preview form is working, but registration is not active yet. Secure account registration must be connected before real accounts can be created.";
+      message.style.color = "#1255a0";
+    });
+  </script>
+</body>
+</html>
