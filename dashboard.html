@@ -1,0 +1,263 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#092b52">
+  <title>My Account | Itrace Bank Financial</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f3f6fb;
+      color: #20334b;
+    }
+
+    header {
+      background: #092b52;
+      color: white;
+      padding: 17px 22px;
+    }
+
+    .nav {
+      max-width: 1150px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .brand { font-size: 18px; font-weight: bold; }
+    header a { color: white; text-decoration: none; }
+
+    .container {
+      max-width: 1150px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .notice {
+      padding: 13px 16px;
+      background: #fff1d2;
+      border: 1px solid #f0d69b;
+      border-radius: 9px;
+      color: #674b0b;
+      font-size: 13px;
+      margin-bottom: 24px;
+      line-height: 1.5;
+    }
+
+    .welcome {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 24px;
+    }
+
+    h1 { color: #092b52; font-size: 28px; }
+    .muted { color: #718096; font-size: 14px; margin-top: 6px; }
+
+    .button {
+      display: inline-block;
+      padding: 11px 16px;
+      border: 0;
+      border-radius: 8px;
+      background: #1255a0;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 13px;
+      cursor: pointer;
+    }
+
+    .button:hover { background: #092b52; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      margin-bottom: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 23px;
+      border: 1px solid #e7edf5;
+      border-radius: 13px;
+      box-shadow: 0 6px 20px #092b5208;
+    }
+
+    .card-label { color: #718096; font-size: 13px; }
+    .amount { color: #092b52; font-size: 27px; font-weight: bold; margin-top: 12px; }
+    .small { color: #718096; font-size: 12px; margin-top: 8px; }
+
+    .section-title {
+      color: #092b52;
+      font-size: 20px;
+      margin-bottom: 17px;
+    }
+
+    .activity { margin-bottom: 25px; overflow: hidden; }
+
+    .transaction {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 17px 0;
+      border-top: 1px solid #edf1f6;
+    }
+
+    .transaction strong { display: block; font-size: 14px; }
+    .transaction small { display: block; color: #718096; margin-top: 5px; }
+    .credit { color: #16804a; font-weight: bold; }
+    .debit { color: #344054; font-weight: bold; }
+
+    .lower {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .bank-card {
+      margin-top: 15px;
+      padding: 22px;
+      min-height: 170px;
+      border-radius: 13px;
+      color: white;
+      background: linear-gradient(135deg, #092b52, #1763a9);
+    }
+
+    .bank-card .card-name { color: #e9bd68; font-size: 12px; letter-spacing: 1px; }
+    .bank-card .card-number { margin-top: 25px; font-size: 17px; letter-spacing: 2px; }
+    .bank-card .card-holder { margin-top: 17px; font-size: 12px; }
+
+    .quick-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+
+    footer {
+      text-align: center;
+      padding: 25px 15px;
+      color: #718096;
+      font-size: 12px;
+    }
+
+    @media (max-width: 760px) {
+      .grid { grid-template-columns: 1fr; }
+      .lower { grid-template-columns: 1fr; }
+      .amount { font-size: 25px; }
+      .container { margin-top: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">ITRACE BANK FINANCIAL</div>
+      <a href="index.html">← Home</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="notice">
+      ACCOUNT PREVIEW — All amounts and transactions shown here are fictional
+      examples. This page is not connected to a live bank account.
+    </div>
+
+    <div class="welcome">
+      <div>
+        <h1>Account overview</h1>
+        <p class="muted">Welcome to your Itrace account preview.</p>
+      </div>
+      <a class="button" href="login.html">Return to Portal</a>
+    </div>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-label">Illustrative available balance</div>
+        <div class="amount">$12,450.00</div>
+        <div class="small">Fictional example amount</div>
+      </article>
+
+      <article class="card">
+        <div class="card-label">Illustrative savings</div>
+        <div class="amount">$5,200.00</div>
+        <div class="small">Fictional example amount</div>
+      </article>
+
+      <article class="card">
+        <div class="card-label">Account status</div>
+        <div class="amount" style="font-size:22px;">Preview</div>
+        <div class="small">No live account is connected</div>
+      </article>
+    </section>
+
+    <section class="card activity">
+      <h2 class="section-title">Recent activity</h2>
+
+      <div class="transaction">
+        <div>
+          <strong>Example salary deposit</strong>
+          <small>Illustrative transaction · 15 Oct 2026</small>
+        </div>
+        <div class="credit">+$2,500.00</div>
+      </div>
+
+      <div class="transaction">
+        <div>
+          <strong>Example utility payment</strong>
+          <small>Illustrative transaction · 12 Oct 2026</small>
+        </div>
+        <div class="debit">−$120.00</div>
+      </div>
+
+      <div class="transaction">
+        <div>
+          <strong>Example grocery purchase</strong>
+          <small>Illustrative transaction · 10 Oct 2026</small>
+        </div>
+        <div class="debit">−$85.00</div>
+      </div>
+    </section>
+
+    <section class="lower">
+      <article class="card">
+        <h2 class="section-title">Card information</h2>
+        <p class="muted">Illustrative card design only. No active payment card is linked.</p>
+
+        <div class="bank-card">
+          <div class="card-name">ITRACE BANK FINANCIAL</div>
+          <div class="card-number">•••• •••• •••• 0000</div>
+          <div class="card-holder">SAMPLE CUSTOMER</div>
+        </div>
+      </article>
+
+      <article class="card">
+        <h2 class="section-title">Quick links</h2>
+        <p class="muted">Explore the available website pages.</p>
+
+        <div class="quick-links">
+          <a class="button" href="services.html">Services</a>
+          <a class="button" href="contact.html">Contact</a>
+          <a class="button" href="faq.html">Help & FAQ</a>
+        </div>
+
+        <p class="muted" style="margin-top:20px;">
+          Transfers, payments, and account updates are unavailable until
+          an authorized financial provider is securely integrated.
+        </p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Itrace Bank Financial · Account preview · Fictional sample information
+  </footer>
+</body>
+        </html>
+        
