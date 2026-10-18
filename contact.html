@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#10243d">
+<title>Contact Us | Itrace Bank Financial</title>
+<style>
+:root{--navy:#10243d;--gold:#d8ad55;--light:#f5f7fa;--text:#263447}
+*{box-sizing:border-box}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--light);color:var(--text);line-height:1.65}
+header{background:var(--navy);color:white;padding:18px 6%;display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap}
+.brand{font-size:19px;font-weight:bold}
+.brand span{color:var(--gold)}
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{color:white;text-decoration:none;font-size:14px}
+nav a:hover{color:var(--gold)}
+.hero{text-align:center;color:white;padding:65px 7%;background:linear-gradient(120deg,rgba(10,27,47,.96),rgba(16,36,61,.82)),url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1600&q=85') center/cover}
+.hero h1{font-size:clamp(32px,5vw,44px);margin:0 0 8px}
+.hero p{margin:auto;max-width:620px;color:#e3e9f0}
+main{max-width:1050px;margin:auto;padding:40px 6%}
+.layout{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:22px}
+.card{background:white;border-radius:16px;padding:25px;box-shadow:0 7px 24px rgba(16,36,61,.07)}
+h2,h3{color:var(--navy)}
+.item{padding:12px 0;border-bottom:1px solid #e8edf2}
+.item:last-child{border-bottom:0}
+form{display:grid;gap:14px}
+label{font-weight:bold;font-size:14px}
+input,textarea,select{width:100%;padding:12px;border:1px solid #d5dce5;border-radius:8px;font:inherit;background:white}
+textarea{min-height:120px;resize:vertical}
+button{border:0;border-radius:8px;background:var(--gold);color:#17263a;font-weight:bold;padding:13px 18px;font-size:15px;cursor:pointer}
+.notice{font-size:13px;color:#657184;background:#f5f7fa;border-radius:8px;padding:12px}
+footer{background:#0b192b;color:#cbd3df;text-align:center;padding:25px 6%;font-size:13px}
+footer a{color:#e9c779;margin:0 8px;text-decoration:none}
+</style>
+</head>
+<body>
+<header>
+  <div class="brand">ITRACE <span>BANK FINANCIAL</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="login.html">Customer Portal</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h1>Contact Us</h1>
+  <p>Find contact information and send a message about this website.</p>
+</section>
+
+<main>
+  <div class="layout">
+    <section class="card">
+      <h2>Get in touch</h2>
+      <p>Use the information below for general questions about the Itrace Bank Financial website.</p>
+      <div class="item">
+        <strong>✉ Email</strong><br>
+        <a href="mailto:contact@itracebank.example">contact@itracebank.example</a>
+      </div>
+      <div class="item">
+        <strong>◷ Support hours</strong><br>
+        Monday–Friday<br>9:00 AM–5:00 PM
+      </div>
+      <div class="item">
+        <strong>◎ Website support</strong><br>
+        General website questions and feedback
+      </div>
+      <p class="notice">The email address and support hours shown here are placeholders. Replace them with verified contact details before publishing.</p>
+    </section>
+
+    <section class="card">
+      <h2>Send a message</h2>
+      <p>This form demonstrates the contact-page layout.</p>
+      <form id="contactForm">
+        <div>
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" maxlength="100" required>
+        </div>
+        <div>
+          <label for="email">Email address</label>
+          <input id="email" name="email" type="email" maxlength="150" required>
+        </div>
+        <div>
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject" required>
+            <option value="">Choose a subject</option>
+            <option>Website question</option>
+            <option>General enquiry</option>
+            <option>Feedback</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea id="message" name="message" maxlength="1500" required></textarea>
+        </div>
+        <button type="submit">Submit message</button>
+        <p class="notice">This form does not send or store messages. Do not enter passwords, account numbers, card details, or other confidential information.</p>
+        <p id="result" role="status"></p>
+      </form>
+    </section>
+  </div>
+</main>
+
+<footer>
+  <p>© 2026 Itrace Bank Financial. All rights reserved.</p>
+  <p><a href="index.html">Home</a><a href="services.html">Services</a><a href="faq.html">FAQs</a><a href="privacy.html">Privacy</a></p>
+</footer>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit',function(event){
+  event.preventDefault();
+  document.getElementById('result').textContent='Thank you. This is a contact-form preview; your message has not been sent.';
+});
+</script>
+</body>
+</html>
