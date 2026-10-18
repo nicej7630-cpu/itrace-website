@@ -56,7 +56,7 @@ footer{text-align:center;color:#dce9f9;font-size:12px;margin-top:auto;padding:18
 import { createClient } from
 'https://esm.sh/@supabase/supabase-js@2';
 
-const SUPABASE_URL = 'https://evhcxwhshcueodjrbxzr.supabase.co';
+const SUPABASE_URL = 'https://evhcxwhshcuejdjrbxzr.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'PASTE_YOUR_PUBLISHABLE_KEY_HERE';
 
 const supabase = createClient(
@@ -98,7 +98,7 @@ form.addEventListener('submit', async (event) => {
   submitBtn.disabled = true;
 
   try {
-    if (SUPABASE_PUBLISHABLE_KEY === '') {
+    if (SUPABASE_PUBLISHABLE_KEY === 'sb_publishable_Hpmn2l4szfRpvSRyEBDjRw_AOeWGkf0') {
       throw new Error('Setup needed: add your Supabase Publishable key in the code first.');
     }
 
